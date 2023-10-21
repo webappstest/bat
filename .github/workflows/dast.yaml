@@ -15,7 +15,7 @@ jobs:
           rustup override set nightly
           cargo miri setup
       - name: Test with Miri
-        run: cargo miri test
+        run: cargo miri test MIRIFLAGS="-Zmiri-disable-isolation"
 
   cargo_careful:
     runs-on: ubuntu-latest
